@@ -10,16 +10,11 @@ Resources:
       Runtime: java8
       MemorySize: 1024
       Timeout: 300
-    Parameters:
-      [FUNCTION_NAME]:
-        Type: String
-        AllowedValues:
-          - reverseString
     Environment:
       Variables:
-        [FUNCTION_NAME]: reverseString
+        FUNCTION_NAME: reverseString
   Globals:
     Function:
       Environment:
         Variables:
-          [FUNCTION_NAME]: reverseString
+          FUNCTION_NAME: reverseString
