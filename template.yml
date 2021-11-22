@@ -13,8 +13,3 @@ Resources:
     Environment:
       Variables:
         FUNCTION_NAME: reverseString
-  Globals:
-    Function:
-      Environment:
-        Variables:
-          FUNCTION_NAME: reverseString
