@@ -6,5 +6,4 @@ Resources:
       Handler: org.springframework.cloud.function.adapter.aws.FunctionInvoker::handleRequest
       Runtime: java8
       MemorySize: 1024
-      Policies: AWSLambdaBasicExecutionRole
       Timeout: 300
