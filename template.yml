@@ -10,3 +10,8 @@ Resources:
       Runtime: java8
       MemorySize: 1024
       Timeout: 300
+  Globals:
+    Function:
+      Environment:
+        Variables:
+          FUNCTION_NAME: reverseString
