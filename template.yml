@@ -1,7 +1,3 @@
-AWSTemplateFormatVersion : '2010-09-09'
-Transform: AWS::Serverless-2016-10-31
-Description: A sample SAM template for deploying Lambda functions.
-
 Resources:
   # Details about the myDateTimeFunction Lambda function
   myfunction:
@@ -9,3 +5,6 @@ Resources:
     Properties:
       Handler: org.springframework.cloud.function.adapter.aws.FunctionInvoker::handleRequest
       Runtime: java8
+      MemorySize: 1024
+      Policies: AWSLambdaBasicExecutionRole
+      Timeout: 300
