@@ -8,4 +8,4 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: org.springframework.cloud.function.adapter.aws.FunctionInvoker::handleRequest
-      Runtime: Java 8 on Amazon Linux 1
+      Runtime: java8
