@@ -12,7 +12,5 @@ Resources:
       Timeout: 300
     Environment:
       Variables:
-        FUNCTION_NAME: !Ref functionName
-Parameters:
-  functionName:
-    Type: String
+        FUNCTION_NAME: 'reverseString'
+
