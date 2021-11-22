@@ -18,6 +18,7 @@ jobs:
       - run: sam build
 
       # Run Unit tests- Specify unit tests here
+      - run: mvn verify
 
       # sam deploy
       - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name myfunction --s3-bucket laksmsctudublins3 --capabilities CAPABILITY_IAM --region eu-west-1
