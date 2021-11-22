@@ -3,6 +3,7 @@ Resources:
   myfunction:
     Type: AWS::Serverless::Function
     Properties:
+      CodeUri: myfunction
       Handler: org.springframework.cloud.function.adapter.aws.FunctionInvoker::handleRequest
       Runtime: java8
       MemorySize: 1024
