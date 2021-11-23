@@ -12,7 +12,8 @@
 	<artifactId>tud-validator-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>tud-validator-service</name>
-	<description>Demo project for Spring Boot</description>
+	<packaging>jar</packaging>
+	<description>Demo project for tud validator migrating to aws lambda</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
