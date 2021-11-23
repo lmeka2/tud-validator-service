@@ -6,6 +6,7 @@ Resources:
   myfunction:
     Type: AWS::Serverless::Function
     Properties:
+      CodeUri: target/tud-validator-service-0.0.1-SNAPSHOT.jar
       Handler: org.springframework.cloud.function.adapter.aws.FunctionInvoker::handleRequest
       Runtime: java8
       MemorySize: 1024
