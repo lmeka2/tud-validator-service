@@ -25,7 +25,7 @@ jobs:
       #- run: sam build
 
       # sam package
-      -run: sam package --template-file template.yml --s3-bucket laksmsctudublins3 --output-template-file packaged.yml
+      - run: sam package --template-file template.yml --s3-bucket laksmsctudublins3 --output-template-file packaged.yml
 
       # sam deploy
       sam deploy --template-file ./packaged.yml --stack-name test --capabilities CAPABILITY_IAM
