@@ -22,7 +22,7 @@ jobs:
       - run: mvn package shade:shade
 
       # sam build
-      #- run: sam build
+      # sam build
 
       # sam package
       - run: sam package --template-file template.yml --s3-bucket laksmsctudublins3 --output-template-file packaged.yml
@@ -31,4 +31,4 @@ jobs:
       sam deploy --template-file ./packaged.yml --stack-name test --capabilities CAPABILITY_IAM
 
       # sam deploy
-      #- run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name myfunction --s3-bucket laksmsctudublins3 --capabilities CAPABILITY_IAM --region eu-west-1
+      # sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name myfunction --s3-bucket laksmsctudublins3 --capabilities CAPABILITY_IAM --region eu-west-1
