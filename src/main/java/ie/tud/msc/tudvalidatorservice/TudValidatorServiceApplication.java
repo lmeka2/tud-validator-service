@@ -2,30 +2,24 @@ package ie.tud.msc.tudvalidatorservice;
 
 import ie.tud.msc.tudvalidatorservice.dto.TudEmployee;
 import ie.tud.msc.tudvalidatorservice.dto.ValidatorResponse;
-import ie.tud.msc.tudvalidatorservice.streams.EventProducer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.function.context.FunctionalSpringApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.messaging.Message;
+import org.springframework.messaging.support.MessageBuilder;
 
 import java.util.function.Function;
 
 @SpringBootApplication
 public class TudValidatorServiceApplication {
 
-	private EventProducer eventProducer;
-
-	TudValidatorServiceApplication(EventProducer eventProducer) {
-		this.eventProducer = eventProducer;
-	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(TudValidatorServiceApplication.class, args);
 	}
 
 	@Bean
-	public Function<TudEmployee, ValidatorResponse> reverseString() {
+	public Function<TudEmployee, Message<String>> reverseString() {
 
 
 
@@ -34,8 +28,12 @@ public class TudValidatorServiceApplication {
 			validatorResponse.setMessage("Hello " + tudEmployee.getName());
 
 			//event this object
-			eventProducer.sendEvents(tudEmployee.getName());
-			return validatorResponse;
+			//eventProducer.sendEvents(tudEmployee.getName());
+			Message<String> o = MessageBuilder
+					.withPayload(validatorResponse.toString())
+					.build();
+
+			return o;
 
 		};
 

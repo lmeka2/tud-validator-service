@@ -9,7 +9,7 @@ spring:
       definition: reverseString
     stream:
       bindings:
-        output:
+        reverseString-out-0:
           destination: AWSKafkaTopic
           content-type: application/json
       kafka:
