@@ -6,7 +6,7 @@ spring:
 
   cloud:
     function:
-      definition: reverseString;EventProducer
+      definition: reverseString
     stream:
       bindings:
         output:
