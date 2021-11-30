@@ -16,7 +16,7 @@ spring:
         streams:
           binder:
             applicationId: my-function
-            brokers: ${KAFKA_BROKER_HOST:b-1.awskafkaclusterplainte.1xkjdt.c2.kafka.eu-west-1.amazonaws.com:9092,b-2.awskafkaclusterplainte.1xkjdt.c2.kafka.eu-west-1.amazonaws.com:9092,b-3.awskafkaclusterplainte.1xkjdt.c2.kafka.eu-west-1.amazonaws.com:9092}
+            brokers: ${KAFKA_BROKER_HOST:b-2.awskafkaclusterplainte.r0zbvw.c2.kafka.eu-west-1.amazonaws.com:9092,b-1.awskafkaclusterplainte.r0zbvw.c2.kafka.eu-west-1.amazonaws.com:9092,b-3.awskafkaclusterplainte.r0zbvw.c2.kafka.eu-west-1.amazonaws.com:9092}
             configuration:
               default:
                 key:
@@ -24,4 +24,4 @@ spring:
                 value:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
   kafka:
-    bootstrap-servers: ${KAFKA_BROKER_HOST:b-1.awskafkaclusterplainte.1xkjdt.c2.kafka.eu-west-1.amazonaws.com:9092,b-2.awskafkaclusterplainte.1xkjdt.c2.kafka.eu-west-1.amazonaws.com:9092,b-3.awskafkaclusterplainte.1xkjdt.c2.kafka.eu-west-1.amazonaws.com:9092}
+    bootstrap-servers: ${b-2.awskafkaclusterplainte.r0zbvw.c2.kafka.eu-west-1.amazonaws.com:9092,b-1.awskafkaclusterplainte.r0zbvw.c2.kafka.eu-west-1.amazonaws.com:9092,b-3.awskafkaclusterplainte.r0zbvw.c2.kafka.eu-west-1.amazonaws.com:9092}
