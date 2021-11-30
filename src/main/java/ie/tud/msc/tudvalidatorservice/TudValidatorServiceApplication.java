@@ -4,6 +4,7 @@ import ie.tud.msc.tudvalidatorservice.dto.TudEmployee;
 import ie.tud.msc.tudvalidatorservice.dto.ValidatorResponse;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.function.context.FunctionalSpringApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
@@ -16,13 +17,11 @@ public class TudValidatorServiceApplication {
 
 
 	public static void main(String[] args) {
-		SpringApplication.run(TudValidatorServiceApplication.class, args);
+		FunctionalSpringApplication.run(TudValidatorServiceApplication.class, args);
 	}
 
 	@Bean
 	public Supplier<Message<String>> reverseString() {
-
-
 
 		return () -> {
 			ValidatorResponse validatorResponse = new ValidatorResponse();
