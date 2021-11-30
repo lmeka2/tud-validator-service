@@ -8,7 +8,7 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 
 @Service
-@EnableBinding(ChannelBindings.class)
+//@EnableBinding(ChannelBindings.class)
 public class EventProducer {
 
     private ChannelBindings channelBindings;
