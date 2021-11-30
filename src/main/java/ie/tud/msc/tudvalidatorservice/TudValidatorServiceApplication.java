@@ -9,6 +9,7 @@ import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
 
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 @SpringBootApplication
 public class TudValidatorServiceApplication {
@@ -19,13 +20,13 @@ public class TudValidatorServiceApplication {
 	}
 
 	@Bean
-	public Function<TudEmployee, Message<String>> reverseString() {
+	public Supplier<Message<String>> reverseString() {
 
 
 
-		return tudEmployee -> {
+		return () -> {
 			ValidatorResponse validatorResponse = new ValidatorResponse();
-			validatorResponse.setMessage("Hello " + tudEmployee.getName());
+			validatorResponse.setMessage("Hello test" );
 
 			//event this object
 			//eventProducer.sendEvents(tudEmployee.getName());
