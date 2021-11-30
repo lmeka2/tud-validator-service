@@ -32,6 +32,8 @@ public class TudValidatorServiceApplication {
 		return tudEmployee -> {
 			ValidatorResponse validatorResponse = new ValidatorResponse();
 			validatorResponse.setMessage("Hello " + tudEmployee.getName());
+
+			//event this object
 			eventProducer.sendEvents(tudEmployee.getName());
 			return validatorResponse;
 

@@ -3,7 +3,10 @@ server.port: 9082
 ---
 spring:
   profiles: lambda
+
   cloud:
+    function:
+      definition: reverseString;EventProducer
     stream:
       bindings:
         output:
