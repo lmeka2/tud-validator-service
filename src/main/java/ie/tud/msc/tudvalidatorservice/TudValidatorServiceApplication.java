@@ -2,6 +2,7 @@ package ie.tud.msc.tudvalidatorservice;
 
 import ie.tud.msc.tudvalidatorservice.dto.TudEmployee;
 import ie.tud.msc.tudvalidatorservice.dto.ValidatorResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.function.context.FunctionalSpringApplication;
@@ -13,6 +14,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 @SpringBootApplication
+@Slf4j
 public class TudValidatorServiceApplication {
 
 
@@ -21,7 +23,7 @@ public class TudValidatorServiceApplication {
 	}
 
 	@Bean
-	public Supplier<Message<String>> reverseString() {
+	public Supplier<Message<String>> eventProducer() {
 
 		return () -> {
 			ValidatorResponse validatorResponse = new ValidatorResponse();
@@ -37,6 +39,17 @@ public class TudValidatorServiceApplication {
 
 		};
 
+	}
+
+
+	@Bean
+	public Function<TudEmployee, ValidatorResponse> reverseString() {
+		return (tudEmployee) -> {
+
+			ValidatorResponse validatorResponse = new ValidatorResponse();
+			validatorResponse.setMessage("Hello "+ tudEmployee.getName());
+			return validatorResponse;
+		};
 	}
 
 }
