@@ -23,11 +23,9 @@ public class TudValidatorServiceApplication {
 	}
 
 	@Bean
-	public Supplier<Message<String>> eventProducer() {
+	public Supplier<Message<String>> eventProducer(ValidatorResponse validatorResponse) {
 
 		return () -> {
-			ValidatorResponse validatorResponse = new ValidatorResponse();
-			validatorResponse.setMessage("Hello test" );
 
 			//event this object
 			//eventProducer.sendEvents(tudEmployee.getName());
@@ -48,6 +46,7 @@ public class TudValidatorServiceApplication {
 
 			ValidatorResponse validatorResponse = new ValidatorResponse();
 			validatorResponse.setMessage("Hello "+ tudEmployee.getName());
+			this.eventProducer(validatorResponse);
 			return validatorResponse;
 		};
 	}
