@@ -31,7 +31,7 @@ public class TudValidatorServiceApplication {
 			//event this object
 			//eventProducer.sendEvents(tudEmployee.getName());
 			Message<String> o = MessageBuilder
-					.withPayload(validatorResponse.toString())
+					.withPayload(validatorResponse.getMessage())
 					.build();
 
 			return o;
