@@ -22,10 +22,10 @@ public class TudValidatorServiceApplication {
 		FunctionalSpringApplication.run(TudValidatorServiceApplication.class, args);
 	}
 
-	/*@Bean
-	public Supplier<Message<String>> eventProducer(ValidatorResponse validatorResponse) {
 
-		return () -> {
+	public void eventProducer(ValidatorResponse validatorResponse) {
+
+
 
 			//event this object
 			//eventProducer.sendEvents(tudEmployee.getName());
@@ -33,11 +33,8 @@ public class TudValidatorServiceApplication {
 					.withPayload(validatorResponse.getMessage())
 					.build();
 
-			return o;
 
-		};
-
-	}*/
+	}
 
 
 	@Bean
@@ -46,7 +43,7 @@ public class TudValidatorServiceApplication {
 
 			ValidatorResponse validatorResponse = new ValidatorResponse();
 			validatorResponse.setMessage("Hello "+ tudEmployee.getName());
-			//this.eventProducer(validatorResponse);
+			this.eventProducer(validatorResponse);
 			return validatorResponse;
 		};
 	}
