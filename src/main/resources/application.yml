@@ -18,13 +18,13 @@ spring:
     stream:
       bindings:
         reverseString-out-0:
-          destination: AWSKafkaTopic
+          destination: TestValidatorTopic
           content-type: application/json
       kafka:
         streams:
           binder:
             applicationId: my-function
-            brokers: ${KAFKA_BROKER_HOST:b-3.awskafkaclusterplainte.r0zbvw.c2.kafka.eu-west-1.amazonaws.com:9092,b-1.awskafkaclusterplainte.r0zbvw.c2.kafka.eu-west-1.amazonaws.com:9092,b-2.awskafkaclusterplainte.r0zbvw.c2.kafka.eu-west-1.amazonaws.com:9092}
+            brokers: ${KAFKA_BROKER_HOST:b-2.testkafka.pipmpf.c4.kafka.eu-west-1.amazonaws.com:9092,b-3.testkafka.pipmpf.c4.kafka.eu-west-1.amazonaws.com:9092,b-1.testkafka.pipmpf.c4.kafka.eu-west-1.amazonaws.com:9092}
             configuration:
               default:
                 key:
@@ -32,4 +32,4 @@ spring:
                 value:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
   kafka:
-    bootstrap-servers: ${KAFKA_BROKER_HOST:b-3.awskafkaclusterplainte.r0zbvw.c2.kafka.eu-west-1.amazonaws.com:9092,b-1.awskafkaclusterplainte.r0zbvw.c2.kafka.eu-west-1.amazonaws.com:9092,b-2.awskafkaclusterplainte.r0zbvw.c2.kafka.eu-west-1.amazonaws.com:9092}
+    bootstrap-servers: ${KAFKA_BROKER_HOST:b-2.testkafka.pipmpf.c4.kafka.eu-west-1.amazonaws.com:9092,b-3.testkafka.pipmpf.c4.kafka.eu-west-1.amazonaws.com:9092,b-1.testkafka.pipmpf.c4.kafka.eu-west-1.amazonaws.com:9092}

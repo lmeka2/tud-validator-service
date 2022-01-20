@@ -6,11 +6,20 @@ import lombok.Setter;
 
 @Data
 public class TudEmployee {
-    public String name;
 
-    public String id;
+    private String name;
+
+    private String id;
 
 
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+
+    }
     public String getName() {
         return name;
     }

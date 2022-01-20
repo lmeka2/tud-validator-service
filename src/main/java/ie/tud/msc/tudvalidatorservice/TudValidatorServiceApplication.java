@@ -44,7 +44,7 @@ public class TudValidatorServiceApplication {
 
 			ValidatorResponse validatorResponse = new ValidatorResponse();
 			validatorResponse.setMessage("Hello "+ tudEmployee.getName());
-			Optional<Employee> e =employeeRepo.findById(Long.parseLong(tudEmployee.id));
+			Optional<Employee> e =employeeRepo.findById(Long.parseLong(tudEmployee.getId()));
 			validatorResponse.setMessage(e.get().toString());
 			this.eventProducer(validatorResponse);
 			return validatorResponse;
