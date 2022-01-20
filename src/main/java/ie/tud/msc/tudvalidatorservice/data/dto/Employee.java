@@ -1,13 +1,12 @@
 package ie.tud.msc.tudvalidatorservice.data.dto;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
 
-@Entity
-@Table(name = "Employee")
+/*@Entity
+@Table(name = "Employee")*/
 public class Employee implements Serializable {
-    @Id
+   /* @Id
     private long employeeId;
 
     @Column
@@ -20,7 +19,7 @@ public class Employee implements Serializable {
     private Date dateofbirth;
 
     @Column
-    private String address;
+    private String address;*/
 
 
 }
