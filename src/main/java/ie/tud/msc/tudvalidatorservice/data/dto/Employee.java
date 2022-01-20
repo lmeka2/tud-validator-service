@@ -15,6 +15,7 @@ import java.sql.Date;
 @Data
 public class Employee implements Serializable {
     @Id
+    @Column(name ="employeeid")
     private long employeeId;
 
     @Column
